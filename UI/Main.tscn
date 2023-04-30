@@ -75,7 +75,7 @@ text = "工作时间："
 
 [node name="SpinBox" parent="VBoxContainer/HFlowContainer/WorkTime" index="1"]
 max_value = 500.0
-value = 1.0
+value = 25.0
 alignment = 1
 
 [node name="RestTime" parent="VBoxContainer/HFlowContainer" instance=ExtResource("1_lsyb5")]
@@ -87,7 +87,7 @@ text = "休息时间："
 
 [node name="SpinBox" parent="VBoxContainer/HFlowContainer/RestTime" index="1"]
 max_value = 500.0
-value = 2.0
+value = 5.0
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -113,6 +113,22 @@ focus_mode = 0
 text = "重置"
 
 [node name="SecondTimer" type="Timer" parent="."]
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -114.0
+offset_right = -63.0
+offset_bottom = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.541176, 0.541176, 0.541176, 1)
+text = "Created by Smallk"
 
 [editable path="VBoxContainer/HFlowContainer/WorkTime"]
 [editable path="VBoxContainer/HFlowContainer/RestTime"]
