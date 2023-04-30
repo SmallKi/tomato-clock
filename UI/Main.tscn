@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgkdxokal77ye"]
+
+[ext_resource type="Script" path="res://UI/Main.gd" id="1_0p58c"]
+[ext_resource type="PackedScene" uid="uid://be5f6fxo1bkqe" path="res://UI/Coms/InputLabel.tscn" id="1_lsyb5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tfprp"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_x8grl"]
+font_size = 60
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+script = ExtResource("1_0p58c")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 98.0
+offset_right = 120.0
+offset_bottom = 182.0
+grow_horizontal = 2
+text = "番茄时钟"
+label_settings = SubResource("LabelSettings_tfprp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -78.0
+offset_right = 202.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="StateLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "工作中"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeShowLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "23:10"
+label_settings = SubResource("LabelSettings_x8grl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+
+[node name="WorkTime" parent="VBoxContainer/HFlowContainer" instance=ExtResource("1_lsyb5")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Name" parent="VBoxContainer/HFlowContainer/WorkTime" index="0"]
+text = "工作时间："
+
+[node name="SpinBox" parent="VBoxContainer/HFlowContainer/WorkTime" index="1"]
+max_value = 500.0
+value = 1.0
+alignment = 1
+
+[node name="RestTime" parent="VBoxContainer/HFlowContainer" instance=ExtResource("1_lsyb5")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Name" parent="VBoxContainer/HFlowContainer/RestTime" index="0"]
+text = "休息时间："
+
+[node name="SpinBox" parent="VBoxContainer/HFlowContainer/RestTime" index="1"]
+max_value = 500.0
+value = 2.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StartBtn" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "开始"
+
+[node name="PauseBtn" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "暂停"
+
+[node name="ResetBtn" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "重置"
+
+[node name="SecondTimer" type="Timer" parent="."]
+
+[editable path="VBoxContainer/HFlowContainer/WorkTime"]
+[editable path="VBoxContainer/HFlowContainer/RestTime"]

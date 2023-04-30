@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://be5f6fxo1bkqe"]
+
+[ext_resource type="Script" path="res://UI/Coms/InputLabel.gd" id="1_rsmw3"]
+
+[node name="InputLabel" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rsmw3")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+text = "间隔："
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+
+[node name="Suffix" type="Label" parent="."]
+layout_mode = 2
+text = "分"

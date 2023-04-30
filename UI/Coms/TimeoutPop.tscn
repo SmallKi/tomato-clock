@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfhcqht3ikp0m"]
+
+[ext_resource type="Script" path="res://UI/Coms/TimeoutPop.gd" id="1_thvnr"]
+[ext_resource type="AudioStream" uid="uid://dek1lhh5j2xpt" path="res://Assets/alert.mp3" id="2_4u1m7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guk3c"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="TimeoutPop" type="Panel"]
+process_mode = 3
+custom_minimum_size = Vector2(500, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_guk3c")
+script = ExtResource("1_thvnr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "时间结束啦"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KnowBtn" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "知道了"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4u1m7")
+autoplay = true
