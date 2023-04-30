@@ -50,7 +50,7 @@ theme_override_constants/separation = 30
 [node name="StateLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "工作中"
+text = "等待开始"
 horizontal_alignment = 1
 vertical_alignment = 1
 
